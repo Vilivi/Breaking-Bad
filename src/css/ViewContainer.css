@@ -1,0 +1,7 @@
+.ViewContainer {
+    width: 80vw;
+    justify-content: center;
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+}

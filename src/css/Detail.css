@@ -1,0 +1,4 @@
+.DetailCard > img {
+    max-height: 55vh;
+    width: auto;
+}
