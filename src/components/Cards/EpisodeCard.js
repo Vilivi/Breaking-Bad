@@ -1,12 +1,12 @@
-const EpisodeCard = ({key, title, season, episode, characters}) => {
-
-    const character = characters.join(", ");
+const EpisodeCard = ({ title, season, episode, characters }) => {
 
     return (
-        <div id={key}>
+        <div>
             <h5>Breaking Bad S{season}/E{episode} => {title}</h5>
-            <p>CharacterList: <br/>
-            {character}
+            <p>CharacterList: <br />
+                {characters.map(value => {
+                    return (<><a href={value}>{value}</a>,{" "}</>);
+                })}
             </p>
         </div>
     );

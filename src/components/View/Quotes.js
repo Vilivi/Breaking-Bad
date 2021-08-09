@@ -9,7 +9,6 @@ const Quotes = () => {
     useEffect (() => {
         const pushFunction = (data) => {
             const tempArray =[];
-            console.log(data);
             for(let i=0; i < data.length; i++){
                 tempArray.push(data.map(value => {
                     return <QuoteCard 
