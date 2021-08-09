@@ -1,4 +1,5 @@
-import {Switch, Link} from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import {Menu, MenuItem} from 'react-pro-sidebar';
 import {FaAngleUp} from 'react-icons/fa';
 import {FaChild} from 'react-icons/fa';
@@ -7,6 +8,7 @@ import {FaAlignCenter} from 'react-icons/fa';
 import '../css/Navigation.css'
 
 const Navigation = () => {
+
     return (
         <Menu>
             <MenuItem icon={<FaAngleUp/>}>

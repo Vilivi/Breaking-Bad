@@ -1,12 +1,13 @@
+import React from 'react';
 import MoonLoader from 'react-spinners/MoonLoader';
-import React, {useState} from 'react';
 import ViewContainer from './ViewContainer';
+import { useMyContext } from '../tools/LoadingContext';
 
 const MainContainer = () => {
 
     // charge spinner / ViewContainer selon chargement
-    const[loading, setLoading] = useState(false);
-    let child = (loading) ? <MoonLoader/> : <ViewContainer/>;
+    const [{load}] = useMyContext();
+    let child = (load) ? <MoonLoader/> : <ViewContainer/>;
 
     return (
         <div>{child}</div>

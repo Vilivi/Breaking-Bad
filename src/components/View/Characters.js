@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import CharacterCard from '../Cards/CharacterCard';
-
+import { useMyContext } from '../../tools/LoadingContext';
 
 const Characters = () => {
 
+    const [, dispatch] = useMyContext();
     const[data, setData] = useState([]);
 
-    useEffect (() => {
+    useEffect (() => { 
+        dispatch({ type: "CHANGE_LOADING_STATUS" });
         const pushFunction = (data) => {
             const tempArray =[];
             for(let i=0; i < data.length; i++){
@@ -14,6 +16,7 @@ const Characters = () => {
                     return <CharacterCard key={value.char_id} name={value.name} src={value.img} />;
                 }));
             }
+            dispatch({ type: "CHANGE_LOADING_STATUS" });
             return tempArray;
         }
 

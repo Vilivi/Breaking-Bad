@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import {ProSidebar, SidebarHeader, SidebarContent} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {FaAngleLeft} from 'react-icons/fa';
@@ -9,8 +9,9 @@ import React, {useState} from 'react';
 import MainContainer from './components/MainContainer';
 import Navigation from './components/Navigation';
 
-const App = () => {
+import LoadingContext from './tools/LoadingContext';
 
+const App = () => {
 
   // Pour changer le sens de la flèche
   const [angle, setAngle] = useState(true);
@@ -42,7 +43,9 @@ const App = () => {
           </ProSidebar>
         </header>
         <div>
-          <MainContainer/>
+          <LoadingContext>
+            <MainContainer/>
+          </LoadingContext>
         </div>
       </div>
     </Router>
